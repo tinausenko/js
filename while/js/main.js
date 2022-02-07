@@ -97,15 +97,35 @@ if (count == 2){
 else {
  alert('false')}
 }
-//24.Фибоначчи
-function fibonachi(){
+//While23.Даны целые положительные числа A и B. Найти их наибольший общий делитель (НОД), используя алгоритм Евклида.
+function Euclid(){
+    alert('Даны целые положительные числа A и B. Найти их наибольший общий делитель (НОД), используя алгоритм Евклида.')
+    let a = prompt('Введите целое число А:')
+    a = Number(a)
+    let b = prompt('Введите целое число B:')
+    b = Number(b)
+      if (Number.isInteger(a) == true&&Number.isInteger(b)==true) {
+        if (a == 0) {alert('НОД('+a+';'+b+')='+b)}
+        else if (b == 0) {alert('НОД('+a+';'+b+')='+a)}
+        else{
+        while ((a!=0)&&(b!=0)){
+            if (a>b) a=a%b;
+            else b=b%a;
+        }
+        alert('НОД='+(a+b))
+        }
+    }
+}
+//While24.Фибоначчи
+function FibonacciNubmer(){
+    alert('Дано целое число N (N> 1). Последовательность чисел Фибоначчи FK определяется следующим образом: F1 = 1, F2 = 1,FK = FK-2 + FK-1, K = 3, 4, … . Проверить, является ли число N числом Фибоначчи. Если является, то вывести True, если нет — вывести False.')
     let  a, b, c = 0
     console.log(c)
-let n=prompt('enter n: ')
-if (n==1) {
- alert('true')}
-else {
- a=1
+    let n=prompt('enter n: ')
+    if (n==1) {
+    alert('true')}
+    else {
+    a=1
     b=1
     c=0
     while (c<n){
@@ -120,6 +140,10 @@ if (c==n) {
 alert('false')
     }
  }
+
+
+
+ 
 let number = prompt('Введите номер задачи от 16 до 26')
 switch (number) {
     case '16':
@@ -143,18 +167,18 @@ switch (number) {
     case '22':
     PrimeNumber()
        break;
-    // case '23':
-    // Factorial()
-    //     break;
-    // case '24':
-    // SumFactorial()
-    //     break;
+    case '23':
+    Euclid()
+       break;
+    case '24':
+    FibonacciNubmer()
+        break;
     // case '25':      
     // SumDIlFactorial()
     //     break; 
-    case '26':      
-    fibonachi()
-        break;         
+    // case '26':      
+    // fibonachi()
+    //     break;         
     default:
     alert( "Нет таких значений" );
   }
